@@ -1,0 +1,70 @@
+@use "sass:math";
+
+// インナー幅設定 rem()関数用・メディアクエリ用
+$innerValue: 1100;
+$inner: calc($innerValue * 1px);
+
+:root {
+  --innerValue: 1100;
+  --inner: calc(var(--innerValue) * 1px);
+  --padding-pc: 25px;
+  --padding-sp: 20px;
+  // フォントウェイト
+  --light: 300;
+  --normal: 400;
+  --medium: 500;
+  --semi-bold: 600;
+  --bold: 700;
+  --ex-bold: 800;
+  //フォントファミリー
+  --base-font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  // --base-font-family: "Noto Sans JP", sans-serif;
+  //カラー
+  --base-color: #666;
+  --base-background: #fff;
+  --back: #333;
+  --black: #333;
+  --white: #fff;
+  --btn-fucus: #fff;
+  //z-index
+  --header: 100;
+  --hamburger: 103;
+  --drawer: 102;
+  --drawer-back: 101;
+  --page-top: 99;
+  //ラインハイト
+  --base-line-height: 1.5;
+  // 差異時間
+  --duration: 0.3s ease;
+  // line-heightハーフレンディング打ち消し
+  --leading-trim: calc((1em - 1lh) / 2);
+  /* デザインカンプで取得した余白が32pxの場合 */
+  // margin-block-start: calc(32px + var(--leading-trim));
+}
+
+/********************************
+* セッティング反映
+********************************/
+body {
+  color: var(--base-color);
+  font-family: var(--base-font-family);
+  font-weight: var(--normal);
+  line-height: var(--base-line-height);
+  background: var(--base-background);
+}
+
+// フォーカス時設定
+a,
+button {
+  &:focus-visible {
+    outline: 2px solid #007bff;
+  }
+}
+
+/********************************
+* font埋め込み
+********************************/
+// @font-face {
+//   font-family: 'TsunagiGothic';
+//   src: url('/fonts/TsunagiGothic.ttf') format('truetype');
+// }

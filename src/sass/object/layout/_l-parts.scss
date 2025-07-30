@@ -1,0 +1,11 @@
+@use '../../global' as * ; 
+
+.l-parts {
+  width: 100%;
+  height: 100%;
+  background-color:#9cdbe8;
+  padding: rem(100) 0;
+}
+.l-parts__sec {
+  padding: rem(50) 0;
+}

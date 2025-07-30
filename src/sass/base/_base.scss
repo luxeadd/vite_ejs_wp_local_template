@@ -1,0 +1,42 @@
+/* リキッドレイアウト対応 */
+@use "../global" as *;
+
+@if $startFrom == sp {
+  //スマホファースト
+  html {
+    //~375px
+    @media (max-width: 375px) {
+      font-size: vw(375, 16);
+    }
+
+    //375px~767px
+    font-size: 16px;
+
+    @include mq("md") {
+      font-size: vw($innerValue, 16);
+    }
+
+    //inner~max-screen
+    @media (min-width: $inner) {
+      font-size: 16px;
+    }
+  }
+} @else {
+  //PCファースト
+  html {
+    font-size: 16px;
+
+    @media (max-width: $inner) {
+      font-size: clamp(10px, calc(vw($innerValue, 16)), 16px);
+    }
+
+    @include mq("md") {
+      font-size: 16px;
+    }
+
+    //~375px
+    @media (max-width: 375px) {
+      font-size: clamp(10px, calc(vw(375, 16)), 16px);
+    }
+  }
+}

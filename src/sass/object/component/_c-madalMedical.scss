@@ -1,0 +1,116 @@
+@use "../../global" as *;
+
+.c-modalMedical {
+  background: var(--white);
+  border: 5px solid var(--base-color);
+  border-radius: 21px;
+  width: min(1200px, 90vw);
+  height: 80vh;
+  margin: auto;
+}
+
+.c-modalMedical[open] {
+  display: block;
+}
+
+//背景設定
+.c-modalMedical {
+  box-shadow: 0 0 0 100vmax rgb(0 0 0 / 50%);
+  transition: opacity 0.5s;
+}
+// .c-modalMedical::backdrop {
+//   background-color: rgb(0 0 0 / 50%);
+//   -webkit-backdrop-filter: blur(4px); /* Safariではまだベンダープレフィックスが必要 */
+//   backdrop-filter: blur(4px);
+// }
+
+.c-modalMedical__container {
+  height: inherit;
+  block-size: 100%;
+  position: relative;
+}
+
+.c-modalMedical__inner {
+  padding: rem(73) rem(30);
+  height: inherit;
+  overflow: scroll;
+  overscroll-behavior: contain;
+
+  @include mq(md) {
+    padding: rem(40) rem(20);
+  }
+}
+
+.c-modalMedical__img {
+  width: min(400px, 100%);
+  aspect-ratio: 400 / 248;
+  margin-inline: auto;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px;
+  }
+}
+
+.c-modalMedical__head {
+  margin-top: rem(45);
+
+  @include mq(md) {
+    margin-top: rem(30);
+  }
+}
+
+.c-modalMedical__title {
+  font-size: rem(24);
+  font-weight: var(--bold);
+  text-align: center;
+
+  @include mq(md) {
+    font-size: rem(18);
+  }
+}
+
+.c-modalMedical__body {
+  margin-top: rem(55);
+
+  @include mq(md) {
+    margin-top: rem(30);
+  }
+}
+
+.c-modalMedical__close {
+  width: rem(59);
+  aspect-ratio: 1 / 1;
+  border: 2px solid #a7a7a7;
+  color: #a7a7a7;
+  background: var(--white);
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-25%, -25%);
+
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 3px;
+    background: currentColor;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}

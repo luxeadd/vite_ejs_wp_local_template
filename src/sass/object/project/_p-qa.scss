@@ -1,0 +1,34 @@
+@use '../../global' as * ; 
+.p-qa {
+  padding-top: rem(52);
+  background: var(--color-back-green);
+
+  @include mq(md) {
+    padding-top: rem(50);
+  }
+}
+
+.p-qa__head {
+  text-align: center;
+}
+
+.p-qa__body {
+  margin-top: rem(80);
+
+  @include mq(md) {
+    margin-top: rem(60);
+  }
+}
+
+.p-qa__contents {
+
+}
+
+.p-qa__accordion:nth-child(n + 2) {
+  margin-top: rem(25);
+
+  @include mq(md) {
+    margin-top: rem(15);
+  }
+}
+

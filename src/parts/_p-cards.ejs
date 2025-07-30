@@ -1,0 +1,41 @@
+<%# 記述例 : include(baseMeta.path + 'parts/_p-cards', { param:''} )%>
+<% 
+const baseMeta = { 
+	path:'./'
+	}; 
+%>
+
+<div class="p-cards">
+  <% const cardLists=[
+  {
+    link:" " ,
+    img:"./assets/images/common/card1.jpg" ,
+    alt:" " ,
+    date:"2023.11/17" ,
+    title:"ライセンス取得" ,
+    text:"ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト" ,
+  },
+  {
+    link:" " ,
+    img:"./assets/images/common/card2.jpg" ,
+    alt:" " ,
+    date:"2023.11/17" ,
+    title:"ウミガメと泳ぐ" ,
+    text:"ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト" ,
+  },
+  {
+    link:" " ,
+    img:"./assets/images/common/card3.jpg" ,
+    alt:" " ,
+    date:"2023.11/17" ,
+    title:"カクレクマノミ" ,
+    text:"ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト" ,
+  },
+  ] %>
+
+  <% for (var cardList of cardLists) {%>
+  <article class="p-cards__item">
+    <%- include(baseMeta.path + '_c-card', { link:cardList.link, img:cardList.img , alt:cardList.alt,  date:cardList.date, title:cardList.title, text:cardList.text} )%>
+  </article>
+  <% } %>
+</div>

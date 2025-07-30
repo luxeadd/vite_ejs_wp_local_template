@@ -1,0 +1,12 @@
+@use '../../global' as * ; 
+
+.c-btn {
+  inline-size: fit-content;
+  outline-offset: 2px;
+  touch-action: manipulation;
+  user-select: none;
+
+  &:focus-visible {
+    outline-offset: 2px;
+  }
+}

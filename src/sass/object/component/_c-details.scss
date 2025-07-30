@@ -1,0 +1,60 @@
+@use '../../global' as *;
+
+.c-details__btn,
+.c-details__close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: rem(10);
+  background: var(--white);
+  font-size: rem(14);
+  line-height: calc(26 / 14);
+  min-height: rem(40);
+  border-bottom: solid 1px;
+  border-left: solid 1px;
+  border-right: solid 1px;
+  cursor: pointer;
+  transition: background var(--duration);
+
+  @include mq(md) {
+    font-size: rem(12);
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: rem(9);
+    height: rem(7);
+    background: currentColor;
+  }
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      background: var(--white);
+    }
+  }
+}
+
+.c-details__btn::after {
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+}
+
+.c-details__close::after {
+  clip-path: polygon(50% 0, 0 100%, 100% 100%);
+}
+
+.c-details__body {
+  overflow: hidden;
+}
+
+.c-details[open] {
+  .c-details__btn {
+    opacity: 0;
+    pointer-events: none;
+  }
+}

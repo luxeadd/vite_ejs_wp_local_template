@@ -1,0 +1,576 @@
+@use '../../global' as *;
+
+$formBorderColor: transparent;
+$formRequiredColor: #f44949;
+$formOutLineColor: #007bff;
+$formRadioCheckColor: #222;
+$formCheckBoxColor: #007bff;
+$formAgreeColorColor: #0f0102;
+$formSubmitHoverColor: #007bff;
+$formDisableColor: #ccc;
+$formConfirmColor: #fff;
+$formInputHeight: rem(50);
+
+// フォームレイアウト
+.form {
+  max-width: 782px;
+  margin-inline: auto;
+
+  @include mq(md) {
+    max-width: 500px;
+  }
+}
+
+.form__content {
+  display: flex;
+  gap: rem(20);
+  align-items: flex-start;
+
+  @include mq(md) {
+    display: block;
+  }
+
+  &.st_center {
+    align-items: center;
+
+    .form__head {
+      margin-top: initial;
+    }
+  }
+}
+
+.form__content + .form__content {
+  margin-top: rem(15);
+}
+
+.form__content.form__contentButton {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(30) rem(50);
+  justify-content: center;
+  width: 100%;
+  margin-top: rem(50);
+
+  @include mq(md) {
+  }
+
+  //コンタクトフォーム7対策
+  > p {
+    display: inherit;
+    flex-wrap: inherit;
+    gap: inherit;
+    justify-content: inherit;
+    width: inherit;
+  }
+
+  br {
+    display: none;
+  }
+}
+
+.form__contentCheckbox {
+  text-align: center;
+}
+
+.form__head {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: rem(10);
+  flex: 0 0 rem(265);
+  margin-top: rem(18);
+
+  @include mq(md) {
+    flex: initial;
+    justify-content: flex-start;
+  }
+}
+
+.form__title {
+  font-size: rem(16);
+  font-weight: var(--bold);
+  line-height: calc(30 / 16);
+  letter-spacing: 0.1em;
+}
+
+.form__confirm {
+  font-size: rem(16);
+  line-height: calc(30 / 16);
+  letter-spacing: 0.1em;
+  min-height: $formInputHeight;
+  display: flex;
+  align-items: center;
+}
+
+.form__required {
+  font-size: rem(13);
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  color: $formRequiredColor;
+  background: currentColor;
+  min-width: rem(60);
+  min-height: rem(30);
+  padding: rem(3);
+  border-radius: 5px;
+  display: grid;
+  place-content: center;
+}
+
+.form__item {
+  flex: 1;
+  max-width: rem(500);
+  @include mq(md) {
+    margin-top: rem(10);
+    max-width: initial;
+  }
+
+  &.st_large {
+    max-width: initial;
+  }
+
+  .c-text {
+    padding: rem(10) rem(10);
+    margin-top: initial;
+  }
+
+  br {
+    display: none;
+  }
+}
+
+//テキスト
+.formText {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--white);
+  background-image: none;
+  border: 1px solid $formBorderColor;
+  color: inherit;
+  font-family: inherit;
+  font-size: rem(16);
+  padding: rem(8) rem(8);
+  min-height: $formInputHeight;
+  width: 100%;
+
+  &:focus {
+    outline: 2px solid $formOutLineColor;
+    box-shadow: none;
+  }
+  &::placeholder {
+    color: inherit;
+  }
+  &:focus::placeholder {
+    color: transparent;
+  }
+}
+
+//ラジオボタン
+.formRadio {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: row;
+  padding-left: rem(10);
+  gap: rem(5) rem(10);
+  min-height: $formInputHeight;
+
+  > p {
+    display: contents;
+  }
+
+  //contact-form7対策
+  // > p {
+  //   display: inherit;
+  //   flex-wrap: inherit;
+  //   flex-direction: inherit;
+  //   padding-left: inherit;
+  //   gap: inherit;
+  // }
+
+  br {
+    display: none;
+  }
+
+  label {
+    position: relative;
+    width: fit-content;
+  }
+  input[type='radio'] {
+    position: absolute;
+    white-space: nowrap;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+  }
+
+  input[type='radio']:focus-visible + span {
+    outline: 2px solid $formRequiredColor;
+  }
+
+  input[type='radio'] + span {
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 15px 6px 25px;
+    position: relative;
+  }
+
+  input[type='radio'] + span::before {
+    -webkit-transform: translateY(-50%);
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    border-radius: 50%;
+    content: '';
+    display: block;
+    width: rem(16);
+    aspect-ratio: 1/1;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  input[type='radio'] + span::after {
+    -webkit-transform: translateY(-50%);
+    background: $formRadioCheckColor;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    content: '';
+    width: rem(16);
+    aspect-ratio: 1/1;
+    left: 0;
+    opacity: 0;
+    padding: 2px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease 0s;
+  }
+
+  input[type='radio']:checked + span::after {
+    opacity: 1;
+  }
+}
+
+//セレクトボタン
+.formSelect {
+  border: 1px solid $formBorderColor;
+  font-size: rem(16);
+  padding: rem(5) rem(10);
+  width: fit-content;
+  max-width: 100%;
+
+  &:focus {
+    outline: 2px solid $formOutLineColor;
+    box-shadow: none;
+  }
+  &::placeholder {
+    color: inherit;
+  }
+  &:focus::placeholder {
+    color: transparent;
+  }
+}
+
+// テキストエリア
+.formTextArea {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid $formBorderColor;
+  border-radius: 5px;
+  color: inherit;
+  font-size: rem(16);
+  padding: rem(12) rem(12);
+  min-height: 200px;
+  width: 100%;
+  white-space: pre-wrap;
+  // resize: none;
+
+  &:focus {
+    outline: 2px solid $formOutLineColor;
+    box-shadow: none;
+  }
+  &::placeholder {
+    color: inherit;
+  }
+  &:focus::placeholder {
+    color: transparent;
+  }
+}
+
+// チェックボックス
+.formCheck {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: rem(10);
+  gap: rem(5) rem(10);
+
+  //contact-form7対策
+  > p {
+    display: inherit;
+    flex-wrap: inherit;
+    flex-direction: inherit;
+    padding-left: inherit;
+    gap: inherit;
+  }
+
+  label {
+    position: relative;
+  }
+
+  input[type='checkbox'] {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  input[type='checkbox'] + span {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 0.2em 0;
+    padding: 0 0 0 rem(25);
+    position: relative;
+    font-size: rem(16);
+    letter-spacing: 0.04em;
+    line-height: 1.714285;
+  }
+
+  input[type='checkbox'] + span::before {
+    -webkit-transform: translateY(-50%);
+    background: #fff;
+    border: 1px solid $formBorderColor;
+    border-radius: 2px;
+    content: '';
+    display: block;
+    width: 1em;
+    height: 1em;
+    left: 0;
+    position: absolute;
+    top: rem(15);
+  }
+
+  input[type='checkbox'] + span::after {
+    -webkit-transform: translateY(-50%) rotate(-45deg);
+    border-bottom: 3px solid $formCheckBoxColor;
+    border-left: 3px solid $formCheckBoxColor;
+    content: '';
+    display: block;
+    height: 0.6em;
+    left: 1px;
+    opacity: 0;
+    position: absolute;
+    top: rem(12);
+    transform: translateY(-50%) rotate(-45deg);
+    transition: all 0.3s ease 0s;
+    width: 1em;
+  }
+
+  input[type='checkbox']:checked + span::before {
+    background: #fff;
+  }
+  input[type='checkbox']:checked + span::after {
+    opacity: 1;
+  }
+  input[type='checkbox']:focus-visible + span {
+    outline: 2px solid $formOutLineColor;
+  }
+
+  .c-text {
+    margin-top: initial !important;
+  }
+}
+
+// プライバシーチェック
+.formAgree {
+  position: relative;
+
+  p {
+    display: contents;
+  }
+
+  label {
+    position: relative;
+  }
+
+  input[type='checkbox'] {
+    width: rem(30);
+    height: rem(30);
+    margin: 0;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  span {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 0 0 rem(50);
+    position: relative;
+    font-size: rem(16);
+    font-weight: var(--bold);
+    line-height: 2;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  span::before {
+    -webkit-transform: translateY(-50%);
+    background: #fff;
+    border: 1px solid $formBorderColor;
+    border-radius: 5px;
+    content: '';
+    display: block;
+    width: rem(30);
+    height: rem(30);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+  }
+
+  span::after {
+    -webkit-transform: translateY(-50%) rotate(-45deg);
+    border-bottom: 3px solid $formAgreeColorColor;
+    border-left: 3px solid $formAgreeColorColor;
+    content: '';
+    display: block;
+    height: 0.6em;
+    width: 1.5em;
+    position: absolute;
+    top: 50%;
+    left: rem(5);
+    transform: translateY(-55%) rotate(-45deg);
+    transition: all 0.3s ease 0s;
+    opacity: 0;
+  }
+
+  input[type='checkbox']:checked ~ span::before {
+    background: #fff;
+  }
+  input[type='checkbox']:checked ~ span::after {
+    opacity: 1;
+  }
+  input[type='checkbox']:focus-visible ~ span {
+    outline: 2px solid $formOutLineColor;
+  }
+
+  .formAgree__link {
+    display: block;
+    width: rem(150);
+    height: 1.8em;
+    background: transparent;
+    border-bottom: 1px solid var(--base-color);
+    position: absolute;
+    top: 0;
+    left: rem(50);
+    z-index: 2;
+    transition: background 0.3s ease;
+  }
+}
+
+// 送信ボタン
+.formBtn {
+  -webkit-appearance: none;
+  background-color: #fff;
+  background-image: none;
+  border: none;
+  color: var(--base-color);
+  cursor: pointer;
+  display: inline-block;
+  font-size: rem(16);
+  font-weight: var(--bold);
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  margin: 0;
+  flex: 0 0 rem(180);
+  min-height: rem(60);
+  padding: rem(5);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  // 確認ボタン用
+  &.is_confirm {
+    background: $formConfirmColor;
+  }
+  // 非活性状態用
+  &:disabled {
+    background: $formDisableColor;
+    pointer-events: none;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+
+  &::-moz-foucus-inner {
+    border: none;
+    padding: 0;
+  }
+  &:focus-visible {
+    outline: 1px solid $formOutLineColor;
+  }
+}
+
+// プライバシーポリシー
+.formPolicy {
+  width: 100%;
+  height: rem(400);
+  padding: rem(10);
+  border: 1px solid #333;
+  background: #fff;
+  overflow-y: scroll;
+
+  .formPolicy__text {
+    font-size: rem(16);
+    letter-spacing: 0.04em;
+    line-height: 1.7142;
+  }
+}
+
+//contact form7 使用時に発生するためリセット
+.wpcf7-spinner {
+  display: none;
+}
+.wpcf7-list-item {
+  margin: 0;
+}
+//送信時のメッセージを消したければ記述
+.wpcf7-response-output {
+  display: none;
+}
+//必須未入力箇所囲み線なし
+.wpcf7 form .wpcf7-response-output {
+  border: none;
+}
+
+//確認画面時に表示にする
+.js_confirmArea {
+  display: none;
+}

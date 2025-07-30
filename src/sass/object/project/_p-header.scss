@@ -1,0 +1,86 @@
+@use "../../global" as *;
+
+:root {
+  --header-height: #{rem(100)};
+  --header-height-sp: #{rem(80)};
+}
+
+.p-header {
+  height: var(--header-height);
+  background: var(--white);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: var(--header);
+  display: flex;
+  transition: background 0.3s ease;
+
+  @include mq(md) {
+    height: var(--header-height-sp);
+  }
+
+  @media print{
+    position: absolute;
+  }
+
+  &.is_active {
+    background: #ccc;
+  }
+}
+
+.p-header__inner {
+  display: flex;
+  gap: rem(20);
+  justify-content: space-between;
+  width: 100%;
+  padding-inline: rem(50) rem(50);
+  height: auto;
+
+  @include mq(md) {
+    padding-inline: rem(30);
+  }
+}
+
+.p-header__logo {
+  width: rem(150);
+  height: initial;
+  display: flex;
+  align-items: center;
+
+  a {
+    width: 100%;
+    display: block;
+  }
+
+  @include mq(md) {
+    width: rem(120);
+  }
+}
+
+
+.p-header__logo img {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.p-header__drawerBtn {
+  display: none;
+  @include mq(md) {
+    display: grid;
+    place-content: center;
+    z-index: var(--hamburger);
+    position: relative;
+
+  }
+}
+
+.p-header__drawer-menu {
+}
+
+.p-header__menu {
+  
+}

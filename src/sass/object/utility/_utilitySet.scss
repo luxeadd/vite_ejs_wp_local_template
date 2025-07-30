@@ -1,0 +1,96 @@
+@use '../../global' as * ; 
+
+//768px以上非表示
+.sp_only {
+  display: none;
+  @include mq("md") {
+    display: block;
+  }
+}
+
+//モバイル非表示
+.pc_only {
+  @include mq("md") {
+    display: none;
+  }
+}
+
+/* ドロワーメニュー展開時背景固定 */
+body:has(.c-hamburger[aria-expanded="true"]){
+  @include mq(md) {
+    overflow: hidden;
+  }
+}
+// モーダル展開時背景固定
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+
+// モダール展開時背面コンテンツのスクロールバーの有無で開閉時に背面レイアウトのガタツキ防止
+body {
+  overflow-y: scroll; /* 常にスクロールバーを表示 */
+}
+.siteWrapper:has(dialog[open]) {
+  overflow-y: auto;
+  scrollbar-gutter: stable; /* スクロールバーのスペースを常に確保する */
+}
+//モーダル表示時のアニメーション設定
+dialog[open]{
+  animation-name: fadeIn;
+  animation-fill-mode: forwards;
+  animation-duration: 200ms;
+  animation-timing-function: ease-out;
+}
+dialog:not([open]) {
+  animation-name: fadeOut;
+  animation-fill-mode: forwards;
+  animation-duration: 200ms;
+  animation-timing-function: ease-out;
+}
+
+.siteWrapper {
+  overflow-x: clip;
+}
+
+// ヘッダーの高さをページ上部に設定
+.siteWrapper {
+  padding-top: var(--header-height);
+  @include mq(md) {
+    padding-top: var(--header-height-sp);
+  }
+}
+
+.u-hover {
+  transition: opacity var(--duration);
+
+  @media (any-hover: hover) {
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.u-hover-white {
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--white);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--duration);
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      &::before {
+        opacity: 0.3;
+      }
+    }
+  }
+}

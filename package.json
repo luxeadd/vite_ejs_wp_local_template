@@ -1,0 +1,48 @@
+{
+  "name": "src",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "wp-env": "wp-env",
+    "dev": "vite",
+    "build": "vite build",
+    "restart": "vite build && vite dev",
+    "format": "prettier --write 'dist/**/*.html' 'dist/*.html' && find dist -type f -name '*.html' -exec sed -i '' '/^$/d' {} + && node buildScript/cacheTimestamp.js",
+    "build-format": "npm run build && npm run format",
+    "build-fallback": "npm run build && node buildScript/fallbackImage.js true && npm run build && node buildScript/fallbackImage.js false",
+    "build-fallback-format": "npm run build-fallback && npm run format",
+    "copy-theme": "node buildScript/copy-theme.js",
+    "watch-theme": "node buildScript/watch-theme.js",
+    "dev-local": "concurrently \"npm run dev\" \"npm run watch-theme\"",
+    "build-local": "npm run build && npm run copy-theme",
+    "restart-local": "npm run build-local && npm run dev"
+  },
+  "devDependencies": {
+    "@wordpress/env": "^10.16.0",
+    "autoprefixer": "^10.4.19",
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^9.2.0",
+    "dotenv": "^17.0.1",
+    "glob": "^10.3.12",
+    "js-beautify": "^1.15.1",
+    "postcss": "^8.4.38",
+    "postcss-sort-media-queries": "^5.2.0",
+    "postcss-url": "^10.1.3",
+    "prettier": "^3.2.5",
+    "sass": "^1.74.1",
+    "vite": "^5.2.0",
+    "vite-plugin-ejs": "^1.7.0",
+    "vite-plugin-imagemin": "^0.4.6",
+    "vite-plugin-live-reload": "^3.0.3",
+    "vite-plugin-sass-glob-import": "^3.0.2",
+    "vite-plugin-webp-and-path": "^0.1.4"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 5%",
+    "iOS >= 9.0",
+    "Android >= 5",
+    "Firefox ESR"
+  ]
+}

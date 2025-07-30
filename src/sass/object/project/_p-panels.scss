@@ -1,0 +1,12 @@
+@use '../../global' as * ; 
+
+.p-panels {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: rem(65) rem(48);
+
+  @include mq(md) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(20);
+  }
+}

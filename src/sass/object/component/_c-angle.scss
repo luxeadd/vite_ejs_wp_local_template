@@ -1,0 +1,62 @@
+@use '../../global' as * ; 
+
+.c-angle {
+  display: inline-block;
+  width: rem(20);
+  height: 2px;
+  background: currentColor;
+  position: relative;
+
+  @include mq(md) {
+    width: rem(15);
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 100%;
+    background: currentColor;
+    position: absolute;
+    right: 0;
+    border-radius: 10px;
+  }
+  
+  &::before {
+    transform: rotate(45deg);
+    transform-origin: right top;
+    top: 0;
+  }
+  &::after {
+    transform: rotate(-45deg);
+    transform-origin: right bottom;
+    top: 0;
+  }
+
+  &.--mm {
+    width: rem(25);
+
+    @include mq(md) {
+      width: rem(18);
+    }
+  }
+
+  &.--sm {
+    width: rem(15);
+
+    @include mq(md) {
+      width: rem(10);
+      height: 1px;
+    }
+  }
+
+  &.--ss {
+    width: rem(11);
+
+    @include mq(md) {
+      width: rem(10);
+      height: 1px;
+    }
+  }
+}

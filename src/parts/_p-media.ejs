@@ -1,0 +1,24 @@
+<%# 記述例 : include(baseMeta.path + 'parts/_p-media', { 
+  mod1:'',
+  mod2:'',
+  img:'./images/top/works2.jpg',
+  alt:'画像',
+  title:'メインタイトルが入ります。', 
+  text:'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。',
+  btn:'#',
+		text2:'詳しく見る'
+  })%>
+<div class="p-media <%= mod1 %>">
+  <div class="p-media__img">
+    <img src="<%= img %>" alt="<%= alt %>">
+  </div>
+  <div class="p-media__block <%= mod2 %>">
+    <h3 class="p-media__title"><%= title %></h3>
+    <div class="p-media__text-box">
+      <p class="p-media__text"><%= text %></p>
+    </div>
+    <div class="p-media__btn">
+      <a href="<%= btn %>" class="c-btn-slide"><%= text2 %></a>
+    </div>
+  </div>
+</div>

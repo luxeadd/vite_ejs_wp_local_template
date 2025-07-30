@@ -1,0 +1,45 @@
+@use '../../global' as * ; 
+
+.c-page-top {
+  width: rem(45);
+  height: rem(45);
+  background: var(--white);
+  position: fixed;
+  bottom: rem(50);
+  right: rem(20);
+  transition: .3s;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: var(--page-top);
+}
+.c-page-top.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
+.c-page-top span:first-child {
+  display: inline-block;
+  width: rem(20);
+  height: rem(2);
+  background: var(--back);
+  transform: rotate(-45deg) translateX(3px);
+  transform-origin: right;
+  transition: .3s;
+}
+.c-page-top span:nth-child(2) {
+  display: inline-block;
+  width: rem(20);
+  height: rem(2);
+  background: var(--back);
+  transform: rotate(45deg)translateX(-3px);
+  transform-origin: left;
+  transition: .3s;
+}
+.c-page-top:hover {
+  background: var(--back);
+  span {
+    background: var(--white);
+  }
+}

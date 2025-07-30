@@ -1,0 +1,22 @@
+<button class="c-panel <%- mod %>" data-modal-open="<%- open %>">
+  <span class="c-panel__img">
+    <%- include('../common/_picture', 
+    {
+    baseMeta:baseMeta,
+    img : img,
+    spImg : '',
+    spImgName : '',
+    file : '.jpg',
+    alt : '',
+    webp : '',
+    pcWidth : '',
+    pcHeight : '',
+    spWidth : '',
+    spHeight : '',
+    async : '', 
+    lazy : '', 
+    }
+    ) %>
+  </span>
+  <span class="c-panel__text"><%- text %></span>
+</button>

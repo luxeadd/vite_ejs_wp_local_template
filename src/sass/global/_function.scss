@@ -1,0 +1,43 @@
+@use "sass:math";
+
+// 入力された数値のみを取り出す(100px => 100)
+// 参照：https://css-tricks.com/snippets/sass/strip-unit-function/
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return calc(#{$number} / (#{$number} * 0 + 1));
+  }
+  @return $number;
+}
+
+// vwへの計算式 vw(1000, 100) => 10vw
+@function vw($window_width, $size) {
+	@return calc(#{$size} / #{$window_width} * 100vw);
+}
+
+// remへの計算式 rem(16) = 16px（16pxを基準としている。10pxを基準とする場合は16を10に変更する）
+@function rem($pixels) {
+  @return calc(#{$pixels} / 16 * 1rem);
+}
+// @function rem($pixels) {
+//   @return math.div($pixels, 16) * 1rem;
+// }
+
+//レスポンシブ可変フォント設定
+@function rfz(
+  $fontSizeMin,
+  $fontSizeMax,
+  $viewportWidthMin,
+  $viewportWidthMax
+) {
+  $X: math.div(
+    $fontSizeMax - $fontSizeMin,
+    $viewportWidthMax - $viewportWidthMin
+  );
+  $Y: $fontSizeMin - $viewportWidthMin * $X;
+  $Z: $X * 100;
+
+  @return clamp(#{$fontSizeMin}px, calc(#{$Y}px + #{$Z}vw), #{$fontSizeMax}px);
+}
+// 使用例: font-size: rfz(16, 20, $minVw, $maxVw);
+// 説明: font-size: rfz(spフォントサイズ, pcフォントサイズ, 可変画面幅最小, 可変画面幅最大);
+// 可変画面幅最小〜可変画面幅最大まではspフォントサイズとpcフォントサイズの間でサイズ可変

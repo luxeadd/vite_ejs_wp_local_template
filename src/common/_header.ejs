@@ -1,0 +1,72 @@
+<header class="l-header p-header js-header" data-fixed-header>
+  <div class="p-header__inner">
+
+    <% headerMenuList = {
+      menu1:'企業情報',
+      menu1Link:'',
+      menu2:'事業紹介',
+      menu2Link:'#sec1',
+      menu3:'サステナビリティ',
+      menu3Link:'#sec2',
+      menu4:'お知らせ',
+      menu4Link:'news/',
+      menu5:'採用情報',
+      menu5Link:'#sec4',
+      menu6:'お問い合わせ',
+      menu6Link:'#sec5',
+  } %>
+
+    <!-- ヘッダーロゴ -->
+    <% if (baseMeta.page === 'top') { %>
+    <h1 class="p-header__logo">
+      <a href="/">
+        <img src="./assets/images/common/logo.png" alt="ロゴ">
+      </a>
+    </h1>
+    <% } else { %>
+    <div class="p-header__logo">
+      <a href="/">
+        <img src="./assets/images/common/logo.png" alt="ロゴ">
+      </a>
+    </div>
+    <% } %>
+    <!-- pcーメニュー -->
+    <nav class="p-header__pc-menu p-header-menu ">
+      <ul class="p-header-menu__items">
+        <li class="p-header-menu__item p-header-menu__item--subMenu"><%= headerMenuList.menu1 %>
+          <ul class="p-header-menu__subItems">
+            <li class="p-header-menu__subItem"><a href="">私たちについて</a></li>
+            <li class="p-header-menu__subItem"><a href="">会社概要</a></li>
+            <li class="p-header-menu__subItem"><a href="">代表挨拶</a></li>
+            <li class="p-header-menu__subItem"><a href="">組織体制</a></li>
+            <li class="p-header-menu__subItem"><a href="">役員紹介</a></li>
+            <li class="p-header-menu__subItem"><a href="">沿革</a></li>
+          </ul>
+        </li>
+        <li class="p-header-menu__item"><a href="<%- baseMeta.path %><%= headerMenuList.menu2Link %>"><%= headerMenuList.menu2 %></a></li>
+        <li class="p-header-menu__item"><a href="<%= headerMenuList.menu3Link %>"><%= headerMenuList.menu3 %></a></li>
+        <li class="p-header-menu__item"><a href="<%- baseMeta.path %><%= headerMenuList.menu4Link %>"><%= headerMenuList.menu4 %></a></li>
+        <li class="p-header-menu__item"><a href="<%= headerMenuList.menu5Link %>"><%= headerMenuList.menu5 %></a></li>
+        <li class="p-header-menu__btn"><a href="<%= headerMenuList.menu6Link %>" class="c-btn c-btn--mail"><%= headerMenuList.menu6 %></a></li>
+      </ul>
+    </nav>
+    <!-- ドロワーアイコン  -->
+    <div class="p-header__drawerBtn">
+      <button type="button" class="c-hamburger js-hamburger" aria-controls="drawer" aria-expanded="false" aria-label="メニューを開閉する" popoverTarget="drawer">
+        <span class="c-hamburger__line"></span>
+      </button>
+    </div>
+    <!-- ドロワーメニュー -->
+    <nav id="drawer" class="p-header__drawer-menu  p-drawer-menu js-drawer-menu" aria-hidden="true" popover>
+      <ul class="p-drawer-menu__items">
+        <li class="p-drawer-menu__item js-drawer-menu__item"><a href="<%= headerMenuList.menu1Link %>"><%= headerMenuList.menu1 %></a></li>
+        <li class="p-drawer-menu__item js-drawer-menu__item"><a href="<%= headerMenuList.menu2Link %>"><%= headerMenuList.menu2 %></a></li>
+        <li class="p-drawer-menu__item js-drawer-menu__item"><a href="<%= headerMenuList.menu3Link %>"><%= headerMenuList.menu3 %></a></li>
+        <li class="p-drawer-menu__item js-drawer-menu__item"><a href="<%- baseMeta.path %><%= headerMenuList.menu4Link %>"><%= headerMenuList.menu4 %></a></li>
+        <li class="p-drawer-menu__item js-drawer-menu__item"><a href="<%= headerMenuList.menu5Link %>"><%= headerMenuList.menu5 %></a></li>
+        <li class="p-drawer-menu__item js-drawer-menu__item"><a href="<%= headerMenuList.menu6Link %>"><%= headerMenuList.menu6 %></a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>

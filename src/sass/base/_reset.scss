@@ -1,0 +1,159 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  min-inline-size: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+html {
+  // スムーススクロール
+  // scroll-behavior: smooth;
+  // スマートフォン横向き時のテキストの拡大を防ぐ
+  -webkit-text-size-adjust: 100%; /* Safariではまだベンダープレフィックスが必要 */
+  text-size-adjust: 100%;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  line-break: strict;
+}
+
+.siteWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+ul,
+ol {
+  list-style-type: '';
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+select,
+label,
+summary,
+[role='tab'],
+[role='button'] {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: unset;
+  background-color: unset;
+  padding: unset;
+  color: unset;
+}
+
+:where(button, [type='button'], [type='reset'], [type='submit']) {
+  touch-action: manipulation;
+}
+
+:where([popover]) {
+  width: unset;
+  height: unset;
+  padding: unset;
+  overflow: unset;
+  color: unset;
+  background-color: unset;
+  border: unset;
+}
+
+:where(dialog) {
+  inline-size: unset;
+  max-inline-size: unset;
+  block-size: unset;
+  max-block-size: unset;
+  padding: unset;
+  margin: unset;
+  color: unset;
+  background-color: unset;
+  border: unset;
+  overflow: unset;
+}
+
+// -------------------------------------
+// 以下ConcreteCMSで影響出るためコメントアウト
+// -------------------------------------
+/* Blur images when they have no alt attribute */
+// img:not([alt]) {
+//   filter: blur(10px);
+// }
+
+/* フォームリセット */
+// input,
+// button,
+// select,
+// textarea {
+//   -webkit-appearance: none;
+//   -moz-appearance: none;
+//   appearance: none;
+//   background: transparent;
+//   border: none;
+//   border-radius: 0;
+//   font: inherit;
+//   outline: none;
+// }
+
+// select::-ms-expand {
+//   display: none;
+// }

@@ -1,0 +1,184 @@
+<% 
+const baseMeta = { 
+	title:'トップページ', 
+	desc:'ディスクリプション',
+	path:'./',
+	incPath:'',
+	page:'top',
+	image:'./assets/images/',
+	}; 
+%>
+
+<%# 診療内容ボタン %>
+<% medicalLists=[
+{
+  mod:'',
+  open:'medicalModal1',
+  img:'common/image1',
+  text:'歯列矯正',
+},
+{
+  mod:'',
+  open:'medicalModal2',
+  img:'common/image1',
+  text:'リンガルブラケット<br>矯正',
+},
+{
+  mod:'',
+  open:'medicalModal3',
+  img:'common/image1',
+  text:'マウスピース矯正',
+},
+{
+  mod:'',
+  open:'medicalModal4',
+  img:'common/image1',
+  text:'ホーム<br>ホワイトニング',
+},
+] %>
+<%# 診療内容モーダル %>
+<% medicalModalLists=[
+{
+  target:'medicalModal1',
+  modalTitle:'medicalModalTitle1',
+  modalDesc:'medicalModalDesc1',
+  img:'common/image1',
+  title:'歯列矯正',
+  text:'当院では、最先端の技術を駆使して患者様の美しい笑顔を実現するため、ジルコニア製セラミックブラケットを用いた歯列矯正を提供しています。<br>ジルコニア製セラミックブラケットは、従来の金属ブラケットに比べて見た目が自然であり、歯の表面に装着しても目立ちにくい特長があります。その透明感となめらかな質感は、治療中でも美しい笑顔を保つことができることを可能にします。<br>また、ジルコニア製セラミックブラケットは金属ブラケットと比べて耐久性が高く、色や染み付きにも強いため、長期間安心してご利用いただけます。さらに、歯の表面との摩擦が少ないため、矯正治療中の不快感も軽減されます。',
+},
+{
+  target:'medicalModal2',
+  modalTitle:'medicalModalTitle2',
+  modalDesc:'medicalModalDesc2',
+  img:'common/image1',
+  title:'リンガルブラケット矯正',
+  text:'リンガルブラケット矯正は、裏側から歯列を矯正する方法であり、ブラケットを歯の裏側に装着することで、外からはほとんど見えない治療法です。<br>この方法は、従来のブラケット矯正と比べて見た目が自然であり、治療中でも自信を持って笑顔を見せることができます。また、ブラケットが歯の裏側に装着されているため、外部からの衝撃や摩擦によるダメージを最小限に抑えることができます。<br>見た目を気にせずに歯の健康と美しさを実現したい方におすすめです。',
+},
+{
+  target:'medicalModal3',
+  modalTitle:'medicalModalTitle3',
+  modalDesc:'medicalModalDesc3',
+  img:'common/image1',
+  title:'マウスピース矯正',
+  text:'金属ブラケットやワイヤーを使用せず、透明で目立ちにくいマウスピースを装着することで、治療中でも自然な笑顔を保つことができます。また、マウスピースは取り外しが可能なので、食事や歯磨きの際に取り外すことができ、日常生活における快適さを確保します。<br>マウスピース矯正は、軽度から中等度の歯並びの問題を解決するための効果的な方法です。当院の専門医師が患者様の状態に合わせてカスタマイズされた治療プランを提案し、安全かつ効果的な治療を行います。<br>歯列矯正をしたいけれども目立つ装置を付けることに不安がある方や、忙しい生活を送っている方におすすめです。',
+},
+{
+  target:'medicalModal4',
+  modalTitle:'medicalModalTitle4',
+  modalDesc:'medicalModalDesc4',
+  img:'common/image1',
+  title:'ホームホワイトニング',
+  text:'自宅で手軽に行えるホームホワイトニングを提供しています。ホームホワイトニングは、歯科医師が特別に調合した漂白剤を使い、歯の色を明るくする方法です。<br>この治療は、患者様が自宅で行うため、忙しいスケジュールの中でも効果的に歯を白くすることができます。特別な装置や器具を使わず、自分のペースで治療を進めることができるので、快適さと利便性を両立した治療法です。<br>ホームホワイトニングは、徐々に歯の色を明るくしていくので、自然な白さを保ちながら美しい笑顔を手に入れることができます。また、歯科医師が適切な濃度の漂白剤を調整し、治療の進行を定期的にチェックするため、安全かつ効果的な治療を受けることができます。',
+},
+] %>
+<%# Q&A %>
+<% qaLists=[
+{
+  question:'やっぱり子どもの頃から治療した方がいいの?',
+  answer:'何歳からでも可能ですが、早い方が良かったという場合があります。<br>まずは気がついたときにご相談下さい。<br>なお早期から治療して治療期間が長くなっても治療費はかわりません。',
+},
+{
+  question:'矯正治療中に虫歯が出来たら?',
+  answer:'治療中であっても虫歯の治療は可能です。<br>治療の必要があればかかりつけの歯科医院にお願いします。<br>毎月のようにお口のなかの状態をチェックして、虫歯ができないようにします。',
+},
+] %>
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<%- include(baseMeta.incPath + 'common/_head', { baseMeta:baseMeta } ) %>
+
+<body id="top">
+  <div class="siteWrapper">
+    <!-- ヘッダー -->
+    <%- include(baseMeta.incPath + 'common/_header', { baseMeta:baseMeta } ) %>
+    <main>
+
+      <div class="p-mv">
+        <%- include(baseMeta.incPath +'common/_picture', 
+      { 
+        baseMeta:baseMeta, 
+        img : 'common/image1', 
+        spImg : 'true', 
+        spImgName : '_sp', 
+        file : '.jpg',  
+        alt : 'ダミー画像', 
+        webp : 'true',
+        pcWidth : '800',
+        pcHeight : '800',
+        spWidth : '300',
+        spHeight : '300',
+        async : 'true', 
+        lazy : 'true', 
+      }
+    ) %>
+      </div>
+
+      <div id="sec1" class="p-mv">
+        <%- include(baseMeta.incPath +'common/_picture', 
+      { 
+        baseMeta:baseMeta, 
+        img : 'common/image1', 
+        spImg : 'true', 
+        spImgName : '_sp', 
+        file : '.jpg',  
+        alt : 'ダミー画像', 
+        webp : 'true',
+        pcWidth : '800',
+        pcHeight : '800',
+        spWidth : '300',
+        spHeight : '300',
+        async : 'true', 
+        lazy : 'true', 
+      }
+    ) %>
+      </div>
+
+      <div class="l-inner">
+        <p>テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト</p>
+        <p>テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト</p>
+        <p>テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト</p>
+        <p>テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト</p>
+
+        <ul hidden="until-found">
+          <li>リストです</li>
+          <li>リストです</li>
+          <li>リストです</li>
+          <li>リストです</li>
+        </ul>
+
+
+        <div style="margin-top: 100px;"></div>
+
+
+        <div class="p-panels">
+          <% for (var medicalList of medicalLists) {%>
+          <%- include(baseMeta.incPath + 'parts/_c-panel', { baseMeta:baseMeta, mod:medicalList.mod, open:medicalList.open, img:medicalList.img, text:medicalList.text}) %>
+          <% } %>
+        </div>
+        <% for (var medicalModalList of medicalModalLists) {%>
+        <%- include(baseMeta.incPath + 'parts/_c-modalMedical',{ baseMeta:baseMeta, target:medicalModalList.target, modalTitle:medicalModalList.modalTitle, modalDesc:medicalModalList.modalDesc, img:medicalModalList.img, title:medicalModalList.title , text:medicalModalList.text  }) %>
+        <% } %>
+
+
+        <div style="margin-top: 100px;"></div>
+
+
+        <% for (var qaList of qaLists) {%>
+        <div class="p-qa__accordion">
+          <%- include(baseMeta.incPath + 'parts/_c-accordion',{ baseMeta:baseMeta, question:qaList.question, answer:qaList.answer }) %>
+        </div>
+        <% } %>
+
+
+      </div>
+
+    </main>
+    <!-- ページトップボタン -->
+    <%- include(baseMeta.incPath +'parts/_c-page-top') %>
+    <!-- フッター -->
+    <%- include(baseMeta.incPath +'common/_footer') %>
+  </div>
+</body>
+
+</html>

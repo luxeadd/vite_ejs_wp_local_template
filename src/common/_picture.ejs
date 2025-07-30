@@ -1,0 +1,29 @@
+<% if (spImg === 'true' || webp === 'true') { %><picture><% } %>
+  <% if (spImg === 'true') { %>
+  <% if (webp === 'true' && fallbackImage === true) { %>
+  <source srcset="<%- baseMeta.image %><%- img %><%- spImgName %>.webp" <% if (spWidth !== '') { %>width="<%- spWidth %>"<% } %> <% if (spHeight !== '') { %>height="<%- spHeight %>"<% } %> media="(max-width:767px)" type="image/webp">
+  <% } %>
+  <source srcset="<%- baseMeta.image %><%- img %><%- spImgName %><%- file %>" <% if (spWidth !== '') { %>width="<%- spWidth %>"<% } %> <% if (spHeight !== '') { %>height="<%- spHeight %>"<% } %> media="(max-width:767px)">
+  <% } %>
+  <% if (webp === 'true' && fallbackImage === true) { %>
+  <source srcset="<%- baseMeta.image %><%- img %>.webp" <% if (pcWidth !== '') { %>width="<%- pcWidth %>"<% } %> <% if (pcHeight !== '') { %>height="<%- pcHeight %>"<% } %> type="image/webp">
+  <% } %>
+  <img src="<%- baseMeta.image %><%- img %><%- file %>" alt="<%- alt %>" <% if (pcWidth !== '') { %>width="<%- pcWidth %>"<% } %> <% if (pcHeight !== '') { %>height="<%- pcHeight %>"<% } %> <% if (async === 'true') { %>decoding="async" <% } %> <% if (lazy === 'true') { %>loading="lazy" <% } %>>
+  <% if (spImg === 'true' || webp === 'true') { %></picture><% } %>
+<%# include(baseMeta.path +'common/_picture', 
+  { 
+    baseMeta:baseMeta, 
+    img:'common/image1', 
+    spImg:'true', 
+    spImgName:'_sp', 
+    file:'.jpg',  
+    alt:'ダミー画像', 
+    webp:'true',
+    pcWidth : '800',
+    pcHeight : '800',
+    spWidth : '300',
+    spHeight : '300',
+    async:'true', 
+    lazy:'true', 
+  }
+) %>

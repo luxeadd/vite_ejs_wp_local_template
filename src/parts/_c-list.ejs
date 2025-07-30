@@ -1,0 +1,18 @@
+<%# 記述例 : include(baseMeta.path + 'parts/_c-list', { 
+  datetime:'2020-07-20', 
+  time:'2020.07.20',
+  cat:'お知らせ',
+  link:'#',
+  title:'記事タイトルが入ります。記事タイトルが入ります。記事タイトルが入ります。'
+} )%>
+<div class="c-list">
+  <div class="c-list__meta">
+    <time class="c-list__time" datetime="<%= datetime %>"><%= time %></time>
+    <span class="c-list__category"><%= cat %></span>
+  </div>
+  <div class="c-list__body">
+    <a href="<%= link %>">
+      <h2 class="c-list__title"><%= title %></h2>
+    </a>
+  </div>
+</div>
