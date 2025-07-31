@@ -18,20 +18,20 @@ const fallbackImage = process.env.VITE_FALLBACK_IMAGE === 'true';
 const WordPressThemePath = process.env.VITE_WORDPRESS_THEME_PATH;
 
 /** 各ファイルの名称、path情報を配列に格納する設定 */
-const inputJsArray = globSync('./src/**/*.js', {
-  ignore: ['src/js/**/_*.js']
+const inputJsArray = globSync('./src/assets/**/*.js', {
+  ignore: ['src/assets/js/**/_*.js']
 }).map((file) => {
-  return [path.relative('src/js', file.slice(0, file.length - path.extname(file).length)), fileURLToPath(new URL(file, import.meta.url))];
+  return [path.relative('src/assets/js', file.slice(0, file.length - path.extname(file).length)), fileURLToPath(new URL(file, import.meta.url))];
 });
 const inputHtmlArray = globSync(['src/**/*.html'], {
   ignore: ['node_modules/**']
 }).map((file) => {
   return [path.relative('src', file.slice(0, file.length - path.extname(file).length)), fileURLToPath(new URL(file, import.meta.url))];
 });
-const inputScssArray = globSync('./src/**/*.scss', {
-  ignore: ['src/sass/**/_*.scss']
+const inputScssArray = globSync('./src/assets/**/*.scss', {
+  ignore: ['src/assets/sass/**/_*.scss']
 }).map((file) => {
-  return [path.relative('src/sass', file.slice(0, file.length - path.extname(file).length)), fileURLToPath(new URL(file, import.meta.url))];
+  return [path.relative('src/assets/sass', file.slice(0, file.length - path.extname(file).length)), fileURLToPath(new URL(file, import.meta.url))];
 });
 
 /** 各ファイル情報の配列をまとめて、Objectに設定 wordpressの場合はhtmlファイルを含めない*/
@@ -43,7 +43,7 @@ const inputObj = wordpress
 export default defineConfig({
   base: './', //相対パスに設定
   root: './src', //開発ディレクトリ設定
-  publicDir: '../src/images', //publicディレクトリ設定
+  publicDir: '../public', //publicディレクトリ設定
 
   build: {
     outDir: wordpress ? `../${WordPressThemeName}` : '../dist', //出力場所の指定

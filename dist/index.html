@@ -1,369 +1,279 @@
-
-
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-  <meta name="robots" content="noindex" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <meta name="format-detection" content="telephone=no" />
-  <!-- meta情報 -->
-  <title>トップページ</title>
-  <meta name="description" content="ディスクリプション" />
-  <meta name="keywords" content="" />
-  <!-- ogp -->
-  <meta property="og:title" content="" />
-  <meta property="og:type" content="" />
-  <meta property="og:url" content="" />
-  <meta property="og:image" content="" />
-  <meta property="og:site_name" content="" />
-  <meta property="og:description" content="" />
-  <meta name="twitter:card" content="summary" />
-  <!-- ファビコン -->
-  <link rel="icon" href="#" />
-  <!-- フォント -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
-  <!-- css -->
-  <!-- JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script type="module" crossorigin src="./assets/js/script.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/css/styles.css">
-</head>
-
-<body id="top">
-  <div class="siteWrapper">
-    <!-- ヘッダー -->
-    <header class="l-header p-header js-header" data-fixed-header>
-  <div class="p-header__inner">
-
-    
-
-    <!-- ヘッダーロゴ -->
-    
-    <h1 class="p-header__logo">
-      <a href="/">
-        <img src="./assets/images/common/logo.webp" alt="ロゴ">
-      </a>
-    </h1>
-    
-    <!-- pcーメニュー -->
-    <nav class="p-header__pc-menu p-header-menu ">
-      <ul class="p-header-menu__items">
-        <li class="p-header-menu__item p-header-menu__item--subMenu">企業情報
-          <ul class="p-header-menu__subItems">
-            <li class="p-header-menu__subItem"><a href="">私たちについて</a></li>
-            <li class="p-header-menu__subItem"><a href="">会社概要</a></li>
-            <li class="p-header-menu__subItem"><a href="">代表挨拶</a></li>
-            <li class="p-header-menu__subItem"><a href="">組織体制</a></li>
-            <li class="p-header-menu__subItem"><a href="">役員紹介</a></li>
-            <li class="p-header-menu__subItem"><a href="">沿革</a></li>
+  <head>
+    <meta name="robots" content="noindex" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- meta情報 -->
+    <title>トップページ</title>
+    <meta name="description" content="ディスクリプション" />
+    <meta name="keywords" content="" />
+    <!-- ogp -->
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:card" content="summary" />
+    <!-- ファビコン -->
+    <link rel="icon" href="#" />
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet" />
+    <!-- css -->
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="module" crossorigin src="./assets/js/script.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/css/styles.css" />
+  </head>
+  <body id="top">
+    <div class="siteWrapper">
+      <!-- ヘッダー -->
+      <header class="l-header p-header js-header" data-fixed-header>
+        <div class="p-header__inner">
+          <!-- ヘッダーロゴ -->
+          <h1 class="p-header__logo">
+            <a href="/">
+              <img src="./assets/images/common/logo.webp" alt="ロゴ" />
+            </a>
+          </h1>
+          <!-- pcーメニュー -->
+          <nav class="p-header__pc-menu p-header-menu">
+            <ul class="p-header-menu__items">
+              <li class="p-header-menu__item p-header-menu__item--subMenu">
+                企業情報
+                <ul class="p-header-menu__subItems">
+                  <li class="p-header-menu__subItem"><a href="">私たちについて</a></li>
+                  <li class="p-header-menu__subItem"><a href="">会社概要</a></li>
+                  <li class="p-header-menu__subItem"><a href="">代表挨拶</a></li>
+                  <li class="p-header-menu__subItem"><a href="">組織体制</a></li>
+                  <li class="p-header-menu__subItem"><a href="">役員紹介</a></li>
+                  <li class="p-header-menu__subItem"><a href="">沿革</a></li>
+                </ul>
+              </li>
+              <li class="p-header-menu__item"><a href="./#sec1">事業紹介</a></li>
+              <li class="p-header-menu__item"><a href="#sec2">サステナビリティ</a></li>
+              <li class="p-header-menu__item"><a href="./news/">お知らせ</a></li>
+              <li class="p-header-menu__item"><a href="#sec4">採用情報</a></li>
+              <li class="p-header-menu__btn"><a href="#sec5" class="c-btn c-btn--mail">お問い合わせ</a></li>
+            </ul>
+          </nav>
+          <!-- ドロワーアイコン  -->
+          <div class="p-header__drawerBtn">
+            <button type="button" class="c-hamburger js-hamburger" aria-controls="drawer" aria-expanded="false" aria-label="メニューを開閉する" popovertarget="drawer">
+              <span class="c-hamburger__line"></span>
+            </button>
+          </div>
+          <!-- ドロワーメニュー -->
+          <nav id="drawer" class="p-header__drawer-menu p-drawer-menu js-drawer-menu" aria-hidden="true" popover>
+            <ul class="p-drawer-menu__items">
+              <li class="p-drawer-menu__item js-drawer-menu__item"><a href="">企業情報</a></li>
+              <li class="p-drawer-menu__item js-drawer-menu__item"><a href="#sec1">事業紹介</a></li>
+              <li class="p-drawer-menu__item js-drawer-menu__item"><a href="#sec2">サステナビリティ</a></li>
+              <li class="p-drawer-menu__item js-drawer-menu__item"><a href="./news/">お知らせ</a></li>
+              <li class="p-drawer-menu__item js-drawer-menu__item"><a href="#sec4">採用情報</a></li>
+              <li class="p-drawer-menu__item js-drawer-menu__item"><a href="#sec5">お問い合わせ</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <main>
+        <div class="p-mv">
+          <picture>
+            <source srcset="./assets/images/common/image1_sp.webp" width="300" height="300" media="(max-width:767px)" />
+            <img src="./assets/images/common/image1.webp" alt="ダミー画像" width="800" height="800" decoding="async" loading="lazy" />
+          </picture>
+        </div>
+        <div id="sec1" class="p-mv">
+          <picture>
+            <source srcset="./assets/images/common/image1_sp.webp" width="300" height="300" media="(max-width:767px)" />
+            <img src="./assets/images/common/image1.webp" alt="ダミー画像" width="800" height="800" decoding="async" loading="lazy" />
+          </picture>
+        </div>
+        <div class="l-inner">
+          <p>
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+          </p>
+          <p>
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+          </p>
+          <p>
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+          </p>
+          <p>
+            テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+          </p>
+          <ul hidden="until-found">
+            <li>リストです</li>
+            <li>リストです</li>
+            <li>リストです</li>
+            <li>リストです</li>
           </ul>
-        </li>
-        <li class="p-header-menu__item"><a href="./#sec1">事業紹介</a></li>
-        <li class="p-header-menu__item"><a href="#sec2">サステナビリティ</a></li>
-        <li class="p-header-menu__item"><a href="./news/">お知らせ</a></li>
-        <li class="p-header-menu__item"><a href="#sec4">採用情報</a></li>
-        <li class="p-header-menu__btn"><a href="#sec5" class="c-btn c-btn--mail">お問い合わせ</a></li>
-      </ul>
-    </nav>
-    <!-- ドロワーアイコン  -->
-    <div class="p-header__drawerBtn">
-      <button type="button" class="c-hamburger js-hamburger" aria-controls="drawer" aria-expanded="false" aria-label="メニューを開閉する" popoverTarget="drawer">
-        <span class="c-hamburger__line"></span>
-      </button>
-    </div>
-    <!-- ドロワーメニュー -->
-    <nav id="drawer" class="p-header__drawer-menu  p-drawer-menu js-drawer-menu" aria-hidden="true" popover>
-      <ul class="p-drawer-menu__items">
-        <li class="p-drawer-menu__item js-drawer-menu__item"><a href="">企業情報</a></li>
-        <li class="p-drawer-menu__item js-drawer-menu__item"><a href="#sec1">事業紹介</a></li>
-        <li class="p-drawer-menu__item js-drawer-menu__item"><a href="#sec2">サステナビリティ</a></li>
-        <li class="p-drawer-menu__item js-drawer-menu__item"><a href="./news/">お知らせ</a></li>
-        <li class="p-drawer-menu__item js-drawer-menu__item"><a href="#sec4">採用情報</a></li>
-        <li class="p-drawer-menu__item js-drawer-menu__item"><a href="#sec5">お問い合わせ</a></li>
-      </ul>
-    </nav>
-
-  </div>
-</header>
-    <main>
-
-      <div class="p-mv">
-        <picture>
-  
-  
-  <source srcset="./assets/images/common/image1_sp.webp" width="300" height="300" media="(max-width:767px)">
-  
-  
-  <img src="./assets/images/common/image1.webp" alt="ダミー画像" width="800" height="800" decoding="async"  loading="lazy" >
-  </picture>
-
-      </div>
-
-      <div id="sec1" class="p-mv">
-        <picture>
-  
-  
-  <source srcset="./assets/images/common/image1_sp.webp" width="300" height="300" media="(max-width:767px)">
-  
-  
-  <img src="./assets/images/common/image1.webp" alt="ダミー画像" width="800" height="800" decoding="async"  loading="lazy" >
-  </picture>
-
-      </div>
-
-      <div class="l-inner">
-        <p>テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト</p>
-        <p>テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト</p>
-        <p>テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト</p>
-        <p>テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト</p>
-
-        <ul hidden="until-found">
-          <li>リストです</li>
-          <li>リストです</li>
-          <li>リストです</li>
-          <li>リストです</li>
-        </ul>
-
-
-        <div style="margin-top: 100px;"></div>
-
-
-        <div class="p-panels">
-          
-          <button class="c-panel " data-modal-open="medicalModal1">
-  <span class="c-panel__img">
-    
-  
-  
-  <img src="./assets/images/common/image1.webp" alt=""    >
-  
-
-  </span>
-  <span class="c-panel__text">歯列矯正</span>
-</button>
-
-          
-          <button class="c-panel " data-modal-open="medicalModal2">
-  <span class="c-panel__img">
-    
-  
-  
-  <img src="./assets/images/common/image1.webp" alt=""    >
-  
-
-  </span>
-  <span class="c-panel__text">リンガルブラケット<br>矯正</span>
-</button>
-
-          
-          <button class="c-panel " data-modal-open="medicalModal3">
-  <span class="c-panel__img">
-    
-  
-  
-  <img src="./assets/images/common/image1.webp" alt=""    >
-  
-
-  </span>
-  <span class="c-panel__text">マウスピース矯正</span>
-</button>
-
-          
-          <button class="c-panel " data-modal-open="medicalModal4">
-  <span class="c-panel__img">
-    
-  
-  
-  <img src="./assets/images/common/image1.webp" alt=""    >
-  
-
-  </span>
-  <span class="c-panel__text">ホーム<br>ホワイトニング</span>
-</button>
-
-          
+          <div style="margin-top: 100px"></div>
+          <div class="p-panels">
+            <button class="c-panel" data-modal-open="medicalModal1">
+              <span class="c-panel__img">
+                <img src="./assets/images/common/image1.webp" alt="" />
+              </span>
+              <span class="c-panel__text">歯列矯正</span>
+            </button>
+            <button class="c-panel" data-modal-open="medicalModal2">
+              <span class="c-panel__img">
+                <img src="./assets/images/common/image1.webp" alt="" />
+              </span>
+              <span class="c-panel__text">リンガルブラケット<br />矯正</span>
+            </button>
+            <button class="c-panel" data-modal-open="medicalModal3">
+              <span class="c-panel__img">
+                <img src="./assets/images/common/image1.webp" alt="" />
+              </span>
+              <span class="c-panel__text">マウスピース矯正</span>
+            </button>
+            <button class="c-panel" data-modal-open="medicalModal4">
+              <span class="c-panel__img">
+                <img src="./assets/images/common/image1.webp" alt="" />
+              </span>
+              <span class="c-panel__text">ホーム<br />ホワイトニング</span>
+            </button>
+          </div>
+          <dialog id="medicalModal1" class="c-modalMedical js-modalDialog" aria-labelledby="medicalModalTitle1" aria-describedby="medicalModalDesc1" autofocus>
+            <div class="c-modalMedical__container js-modalContainer">
+              <div class="c-modalMedical__inner">
+                <div class="c-modalMedical__img">
+                  <picture>
+                    <source srcset="./assets/images/common/image1.webp" media="(max-width:767px)" />
+                    <img src="./assets/images/common/image1.webp" alt="" decoding="async" loading="lazy" />
+                  </picture>
+                </div>
+                <div class="c-modalMedical__head">
+                  <p id="medicalModalTitle1" class="c-modalMedical__title">歯列矯正</p>
+                </div>
+                <div class="c-modalMedical__body">
+                  <p id="medicalModalDesc1" class="c-modalMedical__text c-text">
+                    当院では、最先端の技術を駆使して患者様の美しい笑顔を実現するため、ジルコニア製セラミックブラケットを用いた歯列矯正を提供しています。<br />ジルコニア製セラミックブラケットは、従来の金属ブラケットに比べて見た目が自然であり、歯の表面に装着しても目立ちにくい特長があります。その透明感となめらかな質感は、治療中でも美しい笑顔を保つことができることを可能にします。<br />また、ジルコニア製セラミックブラケットは金属ブラケットと比べて耐久性が高く、色や染み付きにも強いため、長期間安心してご利用いただけます。さらに、歯の表面との摩擦が少ないため、矯正治療中の不快感も軽減されます。
+                  </p>
+                </div>
+                <button class="c-modalMedical__close" type="button" aria-label="モーダルを閉じる" data-modal-close></button>
+              </div>
+            </div>
+          </dialog>
+          <dialog id="medicalModal2" class="c-modalMedical js-modalDialog" aria-labelledby="medicalModalTitle2" aria-describedby="medicalModalDesc2" autofocus>
+            <div class="c-modalMedical__container js-modalContainer">
+              <div class="c-modalMedical__inner">
+                <div class="c-modalMedical__img">
+                  <picture>
+                    <source srcset="./assets/images/common/image1.webp" media="(max-width:767px)" />
+                    <img src="./assets/images/common/image1.webp" alt="" decoding="async" loading="lazy" />
+                  </picture>
+                </div>
+                <div class="c-modalMedical__head">
+                  <p id="medicalModalTitle2" class="c-modalMedical__title">リンガルブラケット矯正</p>
+                </div>
+                <div class="c-modalMedical__body">
+                  <p id="medicalModalDesc2" class="c-modalMedical__text c-text">
+                    リンガルブラケット矯正は、裏側から歯列を矯正する方法であり、ブラケットを歯の裏側に装着することで、外からはほとんど見えない治療法です。<br />この方法は、従来のブラケット矯正と比べて見た目が自然であり、治療中でも自信を持って笑顔を見せることができます。また、ブラケットが歯の裏側に装着されているため、外部からの衝撃や摩擦によるダメージを最小限に抑えることができます。<br />見た目を気にせずに歯の健康と美しさを実現したい方におすすめです。
+                  </p>
+                </div>
+                <button class="c-modalMedical__close" type="button" aria-label="モーダルを閉じる" data-modal-close></button>
+              </div>
+            </div>
+          </dialog>
+          <dialog id="medicalModal3" class="c-modalMedical js-modalDialog" aria-labelledby="medicalModalTitle3" aria-describedby="medicalModalDesc3" autofocus>
+            <div class="c-modalMedical__container js-modalContainer">
+              <div class="c-modalMedical__inner">
+                <div class="c-modalMedical__img">
+                  <picture>
+                    <source srcset="./assets/images/common/image1.webp" media="(max-width:767px)" />
+                    <img src="./assets/images/common/image1.webp" alt="" decoding="async" loading="lazy" />
+                  </picture>
+                </div>
+                <div class="c-modalMedical__head">
+                  <p id="medicalModalTitle3" class="c-modalMedical__title">マウスピース矯正</p>
+                </div>
+                <div class="c-modalMedical__body">
+                  <p id="medicalModalDesc3" class="c-modalMedical__text c-text">
+                    金属ブラケットやワイヤーを使用せず、透明で目立ちにくいマウスピースを装着することで、治療中でも自然な笑顔を保つことができます。また、マウスピースは取り外しが可能なので、食事や歯磨きの際に取り外すことができ、日常生活における快適さを確保します。<br />マウスピース矯正は、軽度から中等度の歯並びの問題を解決するための効果的な方法です。当院の専門医師が患者様の状態に合わせてカスタマイズされた治療プランを提案し、安全かつ効果的な治療を行います。<br />歯列矯正をしたいけれども目立つ装置を付けることに不安がある方や、忙しい生活を送っている方におすすめです。
+                  </p>
+                </div>
+                <button class="c-modalMedical__close" type="button" aria-label="モーダルを閉じる" data-modal-close></button>
+              </div>
+            </div>
+          </dialog>
+          <dialog id="medicalModal4" class="c-modalMedical js-modalDialog" aria-labelledby="medicalModalTitle4" aria-describedby="medicalModalDesc4" autofocus>
+            <div class="c-modalMedical__container js-modalContainer">
+              <div class="c-modalMedical__inner">
+                <div class="c-modalMedical__img">
+                  <picture>
+                    <source srcset="./assets/images/common/image1.webp" media="(max-width:767px)" />
+                    <img src="./assets/images/common/image1.webp" alt="" decoding="async" loading="lazy" />
+                  </picture>
+                </div>
+                <div class="c-modalMedical__head">
+                  <p id="medicalModalTitle4" class="c-modalMedical__title">ホームホワイトニング</p>
+                </div>
+                <div class="c-modalMedical__body">
+                  <p id="medicalModalDesc4" class="c-modalMedical__text c-text">
+                    自宅で手軽に行えるホームホワイトニングを提供しています。ホームホワイトニングは、歯科医師が特別に調合した漂白剤を使い、歯の色を明るくする方法です。<br />この治療は、患者様が自宅で行うため、忙しいスケジュールの中でも効果的に歯を白くすることができます。特別な装置や器具を使わず、自分のペースで治療を進めることができるので、快適さと利便性を両立した治療法です。<br />ホームホワイトニングは、徐々に歯の色を明るくしていくので、自然な白さを保ちながら美しい笑顔を手に入れることができます。また、歯科医師が適切な濃度の漂白剤を調整し、治療の進行を定期的にチェックするため、安全かつ効果的な治療を受けることができます。
+                  </p>
+                </div>
+                <button class="c-modalMedical__close" type="button" aria-label="モーダルを閉じる" data-modal-close></button>
+              </div>
+            </div>
+          </dialog>
+          <div style="margin-top: 100px"></div>
+          <div class="p-qa__accordion">
+            <div class="c-accordion">
+              <button class="c-accordion__btn js-accordion__btn" aria-expanded="false" aria-label="質問欄の開閉ボタン">Q. やっぱり子どもの頃から治療した方がいいの?</button>
+              <div class="c-accordion__body" aria-hidden="true">
+                <div>
+                  <p class="c-accordion__answer c-text-l">
+                    何歳からでも可能ですが、早い方が良かったという場合があります。<br />まずは気がついたときにご相談下さい。<br />なお早期から治療して治療期間が長くなっても治療費はかわりません。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-qa__accordion">
+            <div class="c-accordion">
+              <button class="c-accordion__btn js-accordion__btn" aria-expanded="false" aria-label="質問欄の開閉ボタン">Q. 矯正治療中に虫歯が出来たら?</button>
+              <div class="c-accordion__body" aria-hidden="true">
+                <div>
+                  <p class="c-accordion__answer c-text-l">
+                    治療中であっても虫歯の治療は可能です。<br />治療の必要があればかかりつけの歯科医院にお願いします。<br />毎月のようにお口のなかの状態をチェックして、虫歯ができないようにします。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        
-        <dialog id="medicalModal1" class="c-modalMedical js-modalDialog" aria-labelledby="medicalModalTitle1" aria-describedby="medicalModalDesc1" autofocus>
-  <div class="c-modalMedical__container js-modalContainer">
-    <div class="c-modalMedical__inner">
-      <div class="c-modalMedical__img">
-        <picture>
-  
-  
-  <source srcset="./assets/images/common/image1.webp"   media="(max-width:767px)">
-  
-  
-  <img src="./assets/images/common/image1.webp" alt=""   decoding="async"  loading="lazy" >
-  </picture>
-
-      </div>
-      <div class="c-modalMedical__head">
-        <p id="medicalModalTitle1" class="c-modalMedical__title">歯列矯正</p>
-      </div>
-      <div class="c-modalMedical__body">
-        <p id="medicalModalDesc1" class="c-modalMedical__text c-text">
-          当院では、最先端の技術を駆使して患者様の美しい笑顔を実現するため、ジルコニア製セラミックブラケットを用いた歯列矯正を提供しています。<br>ジルコニア製セラミックブラケットは、従来の金属ブラケットに比べて見た目が自然であり、歯の表面に装着しても目立ちにくい特長があります。その透明感となめらかな質感は、治療中でも美しい笑顔を保つことができることを可能にします。<br>また、ジルコニア製セラミックブラケットは金属ブラケットと比べて耐久性が高く、色や染み付きにも強いため、長期間安心してご利用いただけます。さらに、歯の表面との摩擦が少ないため、矯正治療中の不快感も軽減されます。
-        </p>
-      </div>
-      <button class="c-modalMedical__close" type="button" aria-label="モーダルを閉じる" data-modal-close></button>
-    </div>
-  </div>
-</dialog>
-        
-        <dialog id="medicalModal2" class="c-modalMedical js-modalDialog" aria-labelledby="medicalModalTitle2" aria-describedby="medicalModalDesc2" autofocus>
-  <div class="c-modalMedical__container js-modalContainer">
-    <div class="c-modalMedical__inner">
-      <div class="c-modalMedical__img">
-        <picture>
-  
-  
-  <source srcset="./assets/images/common/image1.webp"   media="(max-width:767px)">
-  
-  
-  <img src="./assets/images/common/image1.webp" alt=""   decoding="async"  loading="lazy" >
-  </picture>
-
-      </div>
-      <div class="c-modalMedical__head">
-        <p id="medicalModalTitle2" class="c-modalMedical__title">リンガルブラケット矯正</p>
-      </div>
-      <div class="c-modalMedical__body">
-        <p id="medicalModalDesc2" class="c-modalMedical__text c-text">
-          リンガルブラケット矯正は、裏側から歯列を矯正する方法であり、ブラケットを歯の裏側に装着することで、外からはほとんど見えない治療法です。<br>この方法は、従来のブラケット矯正と比べて見た目が自然であり、治療中でも自信を持って笑顔を見せることができます。また、ブラケットが歯の裏側に装着されているため、外部からの衝撃や摩擦によるダメージを最小限に抑えることができます。<br>見た目を気にせずに歯の健康と美しさを実現したい方におすすめです。
-        </p>
-      </div>
-      <button class="c-modalMedical__close" type="button" aria-label="モーダルを閉じる" data-modal-close></button>
-    </div>
-  </div>
-</dialog>
-        
-        <dialog id="medicalModal3" class="c-modalMedical js-modalDialog" aria-labelledby="medicalModalTitle3" aria-describedby="medicalModalDesc3" autofocus>
-  <div class="c-modalMedical__container js-modalContainer">
-    <div class="c-modalMedical__inner">
-      <div class="c-modalMedical__img">
-        <picture>
-  
-  
-  <source srcset="./assets/images/common/image1.webp"   media="(max-width:767px)">
-  
-  
-  <img src="./assets/images/common/image1.webp" alt=""   decoding="async"  loading="lazy" >
-  </picture>
-
-      </div>
-      <div class="c-modalMedical__head">
-        <p id="medicalModalTitle3" class="c-modalMedical__title">マウスピース矯正</p>
-      </div>
-      <div class="c-modalMedical__body">
-        <p id="medicalModalDesc3" class="c-modalMedical__text c-text">
-          金属ブラケットやワイヤーを使用せず、透明で目立ちにくいマウスピースを装着することで、治療中でも自然な笑顔を保つことができます。また、マウスピースは取り外しが可能なので、食事や歯磨きの際に取り外すことができ、日常生活における快適さを確保します。<br>マウスピース矯正は、軽度から中等度の歯並びの問題を解決するための効果的な方法です。当院の専門医師が患者様の状態に合わせてカスタマイズされた治療プランを提案し、安全かつ効果的な治療を行います。<br>歯列矯正をしたいけれども目立つ装置を付けることに不安がある方や、忙しい生活を送っている方におすすめです。
-        </p>
-      </div>
-      <button class="c-modalMedical__close" type="button" aria-label="モーダルを閉じる" data-modal-close></button>
-    </div>
-  </div>
-</dialog>
-        
-        <dialog id="medicalModal4" class="c-modalMedical js-modalDialog" aria-labelledby="medicalModalTitle4" aria-describedby="medicalModalDesc4" autofocus>
-  <div class="c-modalMedical__container js-modalContainer">
-    <div class="c-modalMedical__inner">
-      <div class="c-modalMedical__img">
-        <picture>
-  
-  
-  <source srcset="./assets/images/common/image1.webp"   media="(max-width:767px)">
-  
-  
-  <img src="./assets/images/common/image1.webp" alt=""   decoding="async"  loading="lazy" >
-  </picture>
-
-      </div>
-      <div class="c-modalMedical__head">
-        <p id="medicalModalTitle4" class="c-modalMedical__title">ホームホワイトニング</p>
-      </div>
-      <div class="c-modalMedical__body">
-        <p id="medicalModalDesc4" class="c-modalMedical__text c-text">
-          自宅で手軽に行えるホームホワイトニングを提供しています。ホームホワイトニングは、歯科医師が特別に調合した漂白剤を使い、歯の色を明るくする方法です。<br>この治療は、患者様が自宅で行うため、忙しいスケジュールの中でも効果的に歯を白くすることができます。特別な装置や器具を使わず、自分のペースで治療を進めることができるので、快適さと利便性を両立した治療法です。<br>ホームホワイトニングは、徐々に歯の色を明るくしていくので、自然な白さを保ちながら美しい笑顔を手に入れることができます。また、歯科医師が適切な濃度の漂白剤を調整し、治療の進行を定期的にチェックするため、安全かつ効果的な治療を受けることができます。
-        </p>
-      </div>
-      <button class="c-modalMedical__close" type="button" aria-label="モーダルを閉じる" data-modal-close></button>
-    </div>
-  </div>
-</dialog>
-        
-
-
-        <div style="margin-top: 100px;"></div>
-
-
-        
-        <div class="p-qa__accordion">
-          <div class="c-accordion">
-  <button class="c-accordion__btn js-accordion__btn" aria-expanded="false" aria-label="質問欄の開閉ボタン">Q. やっぱり子どもの頃から治療した方がいいの?</button>
-  <div class="c-accordion__body" aria-hidden="true">
-    <div>
-      <p class="c-accordion__answer c-text-l">
-        何歳からでも可能ですが、早い方が良かったという場合があります。<br>まずは気がついたときにご相談下さい。<br>なお早期から治療して治療期間が長くなっても治療費はかわりません。
-      </p>
-    </div>
-  </div>
-</div>
+      </main>
+      <!-- ページトップボタン -->
+      <a href="#top" class="c-page-top js-page-top">
+        <span></span>
+        <span></span>
+      </a>
+      <!-- フッター -->
+      <footer class="p-footer">
+        <div class="p-footer__inner">
+          <div class="p-footer__logo">
+            <a href=""><img src="./assets/images/common/logo.webp" alt="ロゴ" /></a>
+          </div>
+          <div class="p-footer__body">
+            <ul class="p-footer__items">
+              <li class="p-footer__item"><a href="">トップ</a></li>
+              <li class="p-footer__item"><a href="">お知らせ</a></li>
+              <li class="p-footer__item"><a href="">事業内容</a></li>
+              <li class="p-footer__item"><a href="">企業概要</a></li>
+              <li class="p-footer__item"><a href="">ブログ</a></li>
+              <li class="p-footer__item"><a href="">お問い合わせ</a></li>
+            </ul>
+          </div>
         </div>
-        
-        <div class="p-qa__accordion">
-          <div class="c-accordion">
-  <button class="c-accordion__btn js-accordion__btn" aria-expanded="false" aria-label="質問欄の開閉ボタン">Q. 矯正治療中に虫歯が出来たら?</button>
-  <div class="c-accordion__body" aria-hidden="true">
-    <div>
-      <p class="c-accordion__answer c-text-l">
-        治療中であっても虫歯の治療は可能です。<br>治療の必要があればかかりつけの歯科医院にお願いします。<br>毎月のようにお口のなかの状態をチェックして、虫歯ができないようにします。
-      </p>
+      </footer>
+      <div class="p-footer__copy">&copy; 2021 CodeUps Inc.</div>
     </div>
-  </div>
-</div>
-        </div>
-        
-
-
-      </div>
-
-    </main>
-    <!-- ページトップボタン -->
-    <a href="#top" class="c-page-top js-page-top">
-  <span></span>
-  <span></span>
-</a>
-    <!-- フッター -->
-    <footer class="p-footer">
-  <div class="p-footer__inner">
-    <div class="p-footer__logo"><a href=""><img src="./assets/images/common/logo.webp" alt="ロゴ"></a></div>
-    <div class="p-footer__body">
-      <ul class="p-footer__items">
-        <li class="p-footer__item"><a href="">トップ</a></li>
-        <li class="p-footer__item"><a href="">お知らせ</a></li>
-        <li class="p-footer__item"><a href="">事業内容</a></li>
-        <li class="p-footer__item"><a href="">企業概要</a></li>
-        <li class="p-footer__item"><a href="">ブログ</a></li>
-        <li class="p-footer__item"><a href="">お問い合わせ</a></li>
-      </ul>
-    </div>
-  </div>
-</footer>
-<div class="p-footer__copy"> &copy; 2021 CodeUps Inc.</div>
-
-  </div>
-</body>
-
+  </body>
 </html>
