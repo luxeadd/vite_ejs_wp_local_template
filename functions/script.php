@@ -22,12 +22,12 @@ function my_script_init()
 	// 環境設定に基づいてアセットを読み込む
 	if (WORDPRESS_DEV) {
 		// 開発環境ではViteの開発サーバーからアセットを読み込む
-		wp_enqueue_style('vite-css', 'http://localhost:3200/sass/styles.scss', [], null);
-		wp_enqueue_script('vite-js', 'http://localhost:3200/js/script.js', [], null, true);
+		wp_enqueue_style('vite-css', 'http://localhost:3200/assets/sass/styles.scss', [], null);
+		wp_enqueue_script('vite-js', 'http://localhost:3200/assets/js/script.js', [], null, true);
 	} else {
 		//本番環境ではビルドされたアセットを読み込む
-		wp_enqueue_style('my-css', get_template_directory_uri() . '/assets/css/styles.css', array(), filemtime(get_template_directory() . '/assets/css/styles.css'), 'all');
-		wp_enqueue_script('my-js', get_template_directory_uri() . '/assets/js/script.js', array(), '1.0.1', true);
+		wp_enqueue_style('my-css', get_template_directory_uri() . '/dist/assets/css/styles.css', array(), filemtime(get_template_directory() . '/dist/assets/css/styles.css'), 'all');
+		wp_enqueue_script('my-js', get_template_directory_uri() . '/dist/assets/js/script.js', array(), '1.0.1', true);
 	}
 }
 add_action('wp_enqueue_scripts', 'my_script_init');

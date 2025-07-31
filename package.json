@@ -16,7 +16,7 @@
     "watch-theme": "node buildScript/watch-theme.js",
     "dev-local": "concurrently \"npm run dev\" \"npm run watch-theme\"",
     "build-local": "npm run build && npm run copy-theme",
-    "restart-local": "npm run build-local && npm run dev"
+    "restart-local": "npm run build-local && npm run dev-local"
   },
   "devDependencies": {
     "@wordpress/env": "^10.16.0",

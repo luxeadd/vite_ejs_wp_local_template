@@ -21,7 +21,7 @@
   <?php if (has_post_thumbnail()) : ?>
     <meta property="og:image" content="<?php the_post_thumbnail_url(); ?>">
   <?php else : ?>
-    <meta property="og:image" content="<?php echo get_template_directory_uri() ?>/assets/images/ogp/ogp.jpg">
+    <meta property="og:image" content="<?php echo get_template_directory_uri() ?>/dist/assets/images/ogp/ogp.jpg">
   <?php endif; ?>
   <meta property="og:site_name" content="<?php bloginfo('name'); ?>">
   <meta property="og:locale" content="ja_JP">
@@ -66,11 +66,11 @@
               <li class="p-header-menu__subItem"><a href="<?php echo $abutUrls['company']; ?>">会社概要</a></li>
               <li class="p-header-menu__subItem"><a href="<?php echo $abutUrls['message']; ?>">代表挨拶</a></li>
               <li class="p-header-menu__subItem"><a href="<?php echo $abutUrls['organization']; ?>">組織体制</a></li>
-              <li class="p-header-menu__subItem"><a href="<?php echo $abutUrls['officer']; ?>">役員紹介</a></li>
+              <li class="p-header-menu__subItem"><a href="<?php echo $abutUrls['officer']; ?>">役員</a></li>
               <li class="p-header-menu__subItem"><a href="<?php echo $abutUrls['history']; ?>">沿革</a></li>
             </ul>
           </li>
-          <li class="p-header-menu__item"><a href="<?php echo $urls['solution']; ?>">事業紹介</a></li>
+          <li class="p-header-menu__item"><a href="<?php echo $urls['solution']; ?>">事業</a></li>
           <li class="p-header-menu__item"><a href="<?php echo $urls['sustainability']; ?>">サステナビリティ</a></li>
           <li class="p-header-menu__item"><a href="<?php echo $urls['news']; ?>">お知らせ</a></li>
           <li class="p-header-menu__item"><a href="<?php echo $urls['recruit']; ?>" target="_blank">採用情報</a></li>

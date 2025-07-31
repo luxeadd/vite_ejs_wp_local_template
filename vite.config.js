@@ -46,7 +46,7 @@ export default defineConfig({
   publicDir: '../public', //publicディレクトリ設定
 
   build: {
-    outDir: wordpress ? `../${WordPressThemeName}` : '../dist', //出力場所の指定
+    outDir: wordpress ? `../dist` : '../dist', //出力場所の指定
     emptyOutDir: fallbackImage || wordpress ? false : true, // fallbackImageがtrueの場合はディレクトリを削除しない
     sourcemap: false, //jsのソースマップの設定
     minify: false, //圧縮を無効化
@@ -122,7 +122,7 @@ export default defineConfig({
         })
       : //webp画像変換
         VitePluginWebpAndPath({
-          targetDir: wordpress ? `./${WordPressThemeName}` : './dist',
+          targetDir: wordpress ? `./dist/assets` || `./**/*.php` : './dist',
           imgExtensions: 'jpg,png',
           textExtensions: 'html,css,ejs,js',
           quality: 80,
