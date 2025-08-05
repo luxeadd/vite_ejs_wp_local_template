@@ -21,6 +21,8 @@ function my_script_init()
 	wp_enqueue_script('my-swiper', '//unpkg.com/swiper@8/swiper-bundle.min.js');
 	// 環境設定に基づいてアセットを読み込む
 	if (WORDPRESS_DEV) {
+		// Viteのクライアントスクリプトを追加
+		wp_enqueue_script('vite-client', 'http://localhost:3200/@vite/client', [], null, true);
 		// 開発環境ではViteの開発サーバーからアセットを読み込む
 		wp_enqueue_style('vite-css', 'http://localhost:3200/assets/sass/styles.scss', [], null);
 		wp_enqueue_script('vite-js', 'http://localhost:3200/assets/js/script.js', [], null, true);

@@ -8,6 +8,8 @@ import liveReload from 'vite-plugin-live-reload'; //ライブリロード
 import VitePluginWebpAndPath from 'vite-plugin-webp-and-path'; //webp画像変換
 import viteImagemin from 'vite-plugin-imagemin'; //画像圧縮
 import dotenv from 'dotenv';
+import browserSync from 'browser-sync'; //ブラウザのリロード（wordpressの場合のみ）
+const bs = browserSync.create();
 dotenv.config();
 
 // .envから設定を取得
@@ -35,9 +37,7 @@ const inputScssArray = globSync('./src/assets/**/*.scss', {
 });
 
 /** 各ファイル情報の配列をまとめて、Objectに設定 wordpressの場合はhtmlファイルを含めない*/
-const inputObj = wordpress
-  ? Object.fromEntries(inputJsArray.concat(inputScssArray))
-  : Object.fromEntries(inputJsArray.concat(inputHtmlArray, inputScssArray));
+const inputObj = wordpress ? Object.fromEntries(inputJsArray.concat(inputScssArray)) : Object.fromEntries(inputJsArray.concat(inputHtmlArray, inputScssArray));
 
 /** Viteの設定 */
 export default defineConfig({
@@ -79,18 +79,40 @@ export default defineConfig({
     port: 3200, // 他の設定と被らないように3200に固定
     strictPort: true, //ポートがすでに使用されている場合に他のポートを使用しない
     host: true, //IPアドレスで表示
-    open: wordpress ? `http://localhost:${WordPressPort}` : '/', //起動時に自動でブラウザで開くページを指定
+    // open: wordpress ? `http://localhost:${WordPressPort}` : '/', //起動時に自動でブラウザで開くページを指定
+    open: wordpress ? false : '/', //起動時に自動でブラウザで開くページを指定
     watch: {
-      usePolling: true, // ファイル変更をポーリングで監視
-    },
+      usePolling: true // ファイル変更をポーリングで監視
+    }
   },
 
   plugins: [
     viteSassGlobImports(), // SCSSのインポートを自動化する（ワイルドカード使用可能）
-    liveReload(['parts/*.ejs', 'common/*.ejs', `../${WordPressThemeName}/**/*`]), //指定したファイルでもライブリロード可能にする
+    liveReload(['parts/*.ejs', 'common/*.ejs']), //指定したファイルでもライブリロード可能にする ejs用
     ViteEjsPlugin({
       fallbackImage: fallbackImage
     }),
+    wordpress
+      ? {
+          //wordpressの場合はブラウザのリロードを有効化
+          name: 'browser-sync',
+          configureServer(server) {
+            if (server.httpServer) {
+              server.httpServer.once('listening', () => {
+                bs.init({
+                  proxy: `http://localhost:${WordPressPort}`,
+                  files: ['../**/*.php'],
+                  port: 3700,
+                  open: false,
+                  notify: true,
+                  reloadDelay: 1500, // リロードを1秒遅延
+                  reloadDebounce: 1500 // 複数の変更を1秒間まとめる
+                });
+              });
+            }
+          }
+        }
+      : {},
     fallbackImage
       ? //画像圧縮
         viteImagemin({
@@ -127,7 +149,6 @@ export default defineConfig({
           textExtensions: 'html,css,ejs,js',
           quality: 80,
           preserveOriginal: true // 元の画像を残す
-        }),
-  ],
+        })
+  ]
 });
-
